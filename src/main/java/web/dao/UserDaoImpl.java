@@ -4,8 +4,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import web.model.User;
 
-import jakarta.persistence.PersistenceContext;
-import jakarta.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.EntityManager;
 
 import java.util.List;
 
