@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit user</title>
+    <style>
+        form {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        input {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<form th:method="POST" th:action="@{/updateUser}" th:object="${user}">
+    <input type="hidden" th:field="*{id}">
+    <label for="firstname">Введите имя: </label>
+    <input type="text" th:field="*{firstName}" th:value="${user.getFirstName()}" id="firstname">
+    <label for="secondName">Введите фамилию: </label>
+    <input type="text" th:field="*{lastName}" th:value="${user.getLastName()}" id="secondName">
+    <label for="age">Введите возраст: </label>
+    <input type="text" th:field="*{age}" th:value="${user.getAge()}" id="age">
+    <input type="submit" value="Сохранить"/>
+</form>
+</body>
+</html>
