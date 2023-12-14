@@ -26,25 +26,25 @@ public class UserController {
     }
 
 
-    @GetMapping(value = "/user_add_form")
+    @GetMapping(value = "/add")
     public String newUser(Model model) {
         model.addAttribute("user", new User());
-        return "user_add_form";
+        return "add";
     }
 
-    @GetMapping(value = "/user_edit_form")
+    @GetMapping(value = "/edit")
     public String editUser(@RequestParam("userId") Long userId, Model model) {
         model.addAttribute("user", userService.getUserById(userId));
-        return "user_edit_form";
+        return "edit";
     }
 
-    @PostMapping(value = "/createUser")
+    @PostMapping(value = "/create")
     public String add(@ModelAttribute("user") User user) {
         userService.add(user);
         return "redirect:/";
     }
 
-    @PostMapping(value = "/updateUser")
+    @PostMapping(value = "/update")
     public String update(@ModelAttribute("user") User user) {
         userService.update(user);
         return "redirect:/";

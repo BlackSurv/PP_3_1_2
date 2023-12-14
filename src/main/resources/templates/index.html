@@ -38,7 +38,7 @@
         <td th:text="${user.lastName}"></td>
         <td th:text="${user.age}"></td>
         <td>
-            <form th:action="@{/user_edit_form}" th:method="GET">
+            <form th:action="@{/edit}" th:method="GET">
                 <button type="submit" name="userId" th:value="${user.id}">Редактировать</button>
             </form>
             <form th:action="@{/delete}" th:method="POST">
@@ -47,7 +47,7 @@
         </td>
     </tr>
 </table>
-<form th:action="@{/user_add_form}" th:method="GET">
+<form th:action="@{/add}" th:method="GET">
     <button type="submit">Добавить запись</button>
 </form>
 </body>
